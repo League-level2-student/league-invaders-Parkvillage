@@ -15,7 +15,7 @@ public class Alien extends GameObject {
 		// TODO Auto-generated constructor stub
 		speed=1;
 		if (needImage) {
-		    loadImage ("rocket.png");
+		    loadImage ("alien.png");
 		}
 	}
 	
@@ -23,15 +23,14 @@ public class Alien extends GameObject {
 	
 	void update() {
 		y+=speed;
+		//super.emptyUpdate();
 	}
 	void draw(Graphics g) {
-		g.setColor(Color.YELLOW);
-		g.fillRect(x, y, width, height);
-        
+		
 		if (gotImage) {
         	g.drawImage(image, x, y, width, height, null);
         } else {
-        	g.setColor(Color.BLUE);
+        	g.setColor(Color.YELLOW);
         	g.fillRect(x, y, width, height);
         }
 

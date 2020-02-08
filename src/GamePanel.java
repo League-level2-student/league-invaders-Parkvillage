@@ -76,6 +76,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
 	void updateGameState() {
 		o.update();
+		if(rocket.isActive) {
+			currentState= END;
+		}
 	}
 
 	void updateEndState() {
@@ -183,6 +186,10 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 			}
 			
 			startGame();
+			if(e.getKeyCode() == KeyEvent.VK_SPACE) {
+				o.addProjectiles(rocket.getProjectile());
+				
+			}
 		}
 		if(currentState==END) {
 			alienSpawn.stop();
